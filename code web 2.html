@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Game Hub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        nav {
+            background: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            background: #555;
+            transform: scale(1.1);
+        }
+        .container {
+            padding: 20px;
+            animation: fadeIn 1.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .hidden {
+            display: none;
+        }
+        .content-section {
+            background: #292929;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+        }
+        .content-section:hover {
+            transform: translateY(-5px);
+        }
+        footer {
+            background: #222;
+            color: #ccc;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: #333;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .leaderboard-table th, .leaderboard-table td {
+            border: 1px solid #555;
+            padding: 10px;
+            text-align: center;
+        }
+        .comment {
+            background: #444;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+        }
+        .carousel-item {
+            min-width: 100%;
+            transition: transform 0.5s ease;
+        }
+    </style>
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('games')">Games</a>
+        <a href="#" onclick="showSection('leaderboard')">Leaderboard</a>
+        <a href="#" onclick="showSection('forum')">Community Forum</a>
+        <a href="#" onclick="showSection('news')">News</a>
+        <a href="#" onclick="showSection('events')">Events</a>
+        <a href="#" onclick="showSection('guides')">Guides</a>
+        <a href="#" onclick="showSection('reviews')">Reviews</a>
+        <a href="#" onclick="showSection('support')">Support</a>
+        <a href="#" onclick="showSection('about')">About Us</a>
+        <a href="#" onclick="showSection('register')">Register</a>
+        <a href="#" onclick="showSection('login')">Login</a>
+        <a href="#" onclick="showSection('contact')">Contact Us</a>
+        <a href="#" onclick="showSection('privacy')">Privacy Policy</a>
+    </nav>
+
+    <div class="container">
+        <div id="home" class="content-section">
+            <h1>Welcome to Ultimate Game Hub!</h1>
+            <p>Step into a world where gaming comes to life! At Ultimate Game Hub, we bring together passionate gamers from around the globe to explore the latest titles, share epic experiences, and stay updated with the hottest news in the gaming universe. Whether you're a casual player or a hardcore enthusiast, our hub has it all — from detailed game reviews and expert guides to exciting events and a vibrant community forum.
+
+                Join us and level up your gaming journey. The adventure starts here!</p>
+        </div>
+
+        <div id="games" class="content-section hidden">
+            <h1>Games</h1>
+            <p>Explore a wide variety of games including mobile, PC, and console titles. Stay updated with the latest releases and hidden gems.</p>
+            <ul>
+                <li>Mobile Games: Clash Royale, PUBG Mobile, Genshin Impact</li>
+                <li>PC Games: Cyberpunk 2077, Valorant, Elden Ring</li>
+                <li>Console Games: God of War, Horizon Forbidden West, Spider-Man 2</li>
+                <img src="clash_royale.jpg" alt="clash royale">
+                <img src="pubg_mobile.jpg" alt="pubg mobile">
+            </ul>
+        </div>
+
+        <div id="leaderboard" class="content-section hidden">
+            <h1>Leaderboard</h1>
+            <table class="leaderboard-table">
+                <tr><th>Rank</th><th>Player</th><th>Score</th></tr>
+                <tr><td>1</td><td>GamerX</td><td>9800</td></tr>
+                <tr><td>2</td><td>ShadowHunter</td><td>9500</td></tr>
+                <tr><td>3</td><td>ProMaster</td><td>9200</td></tr>
+            </table>
+        </div>
+
+        <div id="forum" class="content-section hidden">
+            <h1>Community Forum: Connect, Share, and Conquer</h1>
+            <p>The Community Forum at Ultimate Game Hub is where gamers unite! Dive into lively discussions about your favorite games, share strategies, and seek advice from fellow players. Whether you're troubleshooting a tricky level, debating the best game of the year, or just looking for new friends to co-op with, our forum is the place to be.
+
+                💬 Discussion Threads: From action-packed shooters to immersive RPGs — find or start conversations that match your interests.
+                🤝 Team Up: Looking for teammates? Post in our matchmaking section to find allies for your next mission.
+                🛠️ Tips & Tricks: Discover hidden secrets, expert guides, and player-tested strategies to improve your gameplay.
+                🌐 Global Community: Join a diverse group of gamers worldwide, all united by their love for gaming.
+                Your voice matters here. Jump in, share your passion, and become part of our ever-growing gaming family!</p>
+        </div>
+
+        <div id="news" class="content-section hidden">
+            <h1>News</h1>
+            <p>Stay updated with the latest gaming news, announcements, and industry trends.</p>
+        </div>
+
+        <div id="events" class="content-section hidden">
+            <h1>Events</h1>
+            <p>Check out upcoming gaming events, tournaments, and expos happening around the world.</p>
+        </div>
+
+        <div id="guides" class="content-section hidden">
+            <h1>Guides</h1>
+            <p>Access in-depth guides, walkthroughs, and tips to help you master your favorite games.</p>
+        </div>
+
+        <div id="reviews" class="content-section hidden">
+            <h1>Reviews</h1>
+            <p>Read detailed reviews of the latest and most popular games across different platforms.</p>
+        </div>
+
+        <div id="support" class="content-section hidden">
+            <h1>Support</h1>
+            <p>Need help? Contact our support team or browse through FAQs for quick solutions.</p>
+        </div>
+
+        <div id="about" class="content-section hidden">
+            <h1>About Us</h1>
+            <p>Ultimate Game Hub is dedicated to providing the best gaming experience through comprehensive content, active community, and latest updates.</p>
+        </div>
+
+        <div id="register" class="content-section hidden">
+            <h1>Register</h1>
+            <form>
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Register Now</button>
+            </form>
+        </div>
+
+        <div id="login" class="content-section hidden">
+            <h1>Login</h1>
+            <form>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <div id="contact" class="content-section hidden">
+            <h1>Contact Us</h1>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <div id="privacy" class="content-section hidden">
+            <h1>Privacy Policy</h1>
+            <p>We value your privacy. Read our detailed privacy policy to understand how we collect, use, and protect your information.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Ultimate Game Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
